@@ -1,0 +1,13 @@
+name = "pagepulsar-api"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+[vars]
+# Sites allowed to call the scanner (comma-separated). localhost is always allowed for testing.
+ALLOWED_ORIGINS = "https://pagepulsar.online,https://www.pagepulsar.online"
+
+# Secret (not stored here): run `npx wrangler secret put PSI_API_KEY` and paste your Google PageSpeed Insights API key.
+
+[observability]
+enabled = true

@@ -1,0 +1,21 @@
+# PagePulsar
+
+> PagePulsar is a free website checker for local businesses (restaurants, dentists, salons and spas, contractors, auto repair shops) in the US, UK, Canada and Australia. Enter a website address and get a 0-100 score, an A-F grade and a plain-English fix list in about 30 seconds. No signup.
+
+PagePulsar checks a homepage for: tap-to-call links, phone number, contact form, opening hours, location and map, reviews, online booking or ordering, Google basics (title, description, headings, LocalBusiness structured data, sitemap), mobile speed and accessibility (via Google PageSpeed Insights), HTTPS, and AI crawler access. Fixes are offered by web developer Shoaib Ahmad from $50.
+
+## Free tools
+- [Free website checker](https://pagepulsar.online/): website health check for any local business
+- [Restaurant website checker](https://pagepulsar.online/restaurant-website-checker/)
+- [Dental website checker](https://pagepulsar.online/dental-website-checker/)
+- [Salon and spa website checker](https://pagepulsar.online/salon-website-checker/)
+- [Contractor website checker](https://pagepulsar.online/contractor-website-checker/)
+- [Auto repair shop website checker](https://pagepulsar.online/auto-repair-website-checker/)
+- [Mobile friendly test](https://pagepulsar.online/mobile-friendly-test/)
+- [Website accessibility checker](https://pagepulsar.online/website-accessibility-checker/)
+- [AI-ready website checker](https://pagepulsar.online/ai-ready-website-checker/)
+
+## About
+- [How scoring works](https://pagepulsar.online/how-scoring-works/)
+- [About](https://pagepulsar.online/about/)
+- [Contact](https://pagepulsar.online/contact/): contact@pagepulsar.online
