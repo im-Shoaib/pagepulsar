@@ -93,7 +93,7 @@ ${crumbs([["Home", "/"], ["How scoring works", "/how-scoring-works/"]])}
     description: "PagePulsar is a free website checker for local businesses, built by independent web developer Shoaib Ahmad. Honest reports, plain English, fixes from $50.",
     priority: "0.5",
     schema: ({ SITE, breadcrumbSchema }) => [
-      { "@context": "https://schema.org", "@type": "AboutPage", name: "About PagePulsar", url: SITE.url + "/about/", mainEntity: { "@type": "Person", name: SITE.owner, jobTitle: "Web developer", url: SITE.url + "/about/", sameAs: [SITE.fiverr] } },
+      { "@context": "https://schema.org", "@type": "AboutPage", name: "About PagePulsar", url: SITE.url + "/about/", mainEntity: { "@type": "Person", name: SITE.owner, jobTitle: "Web developer", image: SITE.url + "/assets/img/shoaib-ahmad.webp", url: SITE.url + "/about/", sameAs: [SITE.fiverr] } },
       breadcrumbSchema([["Home", "/"], ["About", "/about/"]])
     ],
     body: ({ crumbs, SITE, ICONS }) => `<main id="main">
@@ -114,7 +114,7 @@ ${crumbs([["Home", "/"], ["About", "/about/"]])}
 <ul><li>The checkup is free, with no signup.</li><li>We only read your public homepage — never logins or private data.</li><li>We say what we can't check, instead of pretending.</li><li>No pushy sales calls. You message us if you want help.</li></ul>
 </div>
 <div class="card card-dark" style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:14px;align-self:flex-start">
-<span class="avatar" aria-hidden="true" style="width:72px;height:72px;font-size:24px">SA</span>
+<img class="portrait" src="/assets/img/shoaib-ahmad.webp" width="480" height="600" alt="Shoaib Ahmad, web developer and founder of PagePulsar" decoding="async">
 <h2 style="font-size:28px">${SITE.owner}</h2>
 <p class="muted">Web developer · HTML, CSS, JavaScript, PHP, Laravel</p>
 <a class="btn btn-lime" href="https://wa.me/${SITE.whatsapp}" data-wa="Hi Shoaib, I'd like help with my website." data-pos="about">${ICONS.wa}Chat on WhatsApp</a>

@@ -137,7 +137,7 @@ ul, ol { margin: 0; padding: 0; }
 .chip.btn-ghost:hover { background: var(--lime); }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
 .icon-tile { width: 56px; height: 56px; border-radius: 18px; background: rgba(255, 255, 255, 0.6); display: flex; align-items: center; justify-content: center; }
-.icon-tile svg { width: 28px; height: 28px; }
+.icon-tile svg { width: 30px; height: 30px; }
 
 /* ---------- Hero ---------- */
 .hero { display: flex; flex-wrap: wrap; gap: 16px; padding-top: 16px; }
@@ -228,7 +228,8 @@ ul, ol { margin: 0; padding: 0; }
 .types { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-top: 24px; }
 .type { text-decoration: none; padding: 22px; border-radius: var(--radius-l); display: flex; flex-direction: column; gap: 10px; transition: transform 0.3s var(--ease); }
 .type:hover { transform: translateY(-4px) rotate(-0.6deg); }
-.type svg { width: 30px; height: 30px; }
+.type-ico { width: 54px; height: 54px; border-radius: 17px; background: rgba(255, 255, 255, 0.7); display: grid; place-items: center; margin-bottom: 6px; }
+.type-ico svg { width: 30px; height: 30px; }
 .type b { font-size: 20px; }
 .type span { font-size: 14px; }
 .type-sun { background: var(--sun); } .type-sun span { color: var(--sun-ink); }
@@ -250,7 +251,8 @@ ul, ol { margin: 0; padding: 0; }
 .cta h2 em { font-style: normal; color: var(--lime); }
 .cta p { color: #c9c9d1; font-size: 18px; max-width: 520px; }
 .person { display: flex; align-items: center; gap: 12px; font-size: 15px; line-height: 1.3; }
-.avatar { width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--lime); background: #2c2c33; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; color: var(--lime); }
+.avatar { width: 52px; height: 52px; flex: none; border-radius: 50%; border: 2px solid var(--lime); background: #2c2c33; object-fit: cover; }
+.portrait { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: calc(var(--radius-l) - 8px); background: #3a3026; }
 .chat { flex: 1 1 320px; min-width: 0; max-width: 420px; padding: 20px; border-radius: 28px; background: #1e1e24; display: flex; flex-direction: column; gap: 10px; }
 .chat-head { display: flex; align-items: center; gap: 10px; padding-bottom: 10px; border-bottom: 1px solid #2c2c33; font-size: 14px; line-height: 1.25; }
 .chat-head small { color: #8f8f99; font-size: 12px; }

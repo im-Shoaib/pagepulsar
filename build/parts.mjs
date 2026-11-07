@@ -1,5 +1,10 @@
 // Shared HTML pieces: icons, head, header, footer, scan form, phone mockup, CTA, FAQ.
+import { readFileSync } from "node:fs";
 import { TYPES, LANDINGS } from "./content.mjs";
+
+// Phosphor icons (MIT), inlined at build time.
+const ph = (name, weight = "duotone") => readFileSync(new URL(`../node_modules/@phosphor-icons/core/assets/${weight}/${name}${weight === "regular" ? "" : "-" + weight}.svg`, import.meta.url), "utf8")
+  .trim().replace(/<svg[^>]*>/, '<svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false">');
 
 export const SITE = {
   name: "PagePulsar",
@@ -17,21 +22,21 @@ export const ICONS = {
   check: `<svg viewBox="0 0 24 24" ${P} stroke-width="2.6"><path d="M5 12l5 5L20 7"/></svg>`,
   x: `<svg viewBox="0 0 24 24" ${P} stroke-width="2.8"><path d="M6 6l12 12M18 6L6 18"/></svg>`,
   alert: `<svg viewBox="0 0 24 24" ${P} stroke-width="2.8"><path d="M12 7v6M12 17h.01"/></svg>`,
-  phone: `<svg viewBox="0 0 24 24" ${P} stroke-width="1.9"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>`,
-  bolt: `<svg viewBox="0 0 24 24" ${P} stroke-width="1.9"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
-  search: `<svg viewBox="0 0 24 24" ${P} stroke-width="1.9"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>`,
-  person: `<svg viewBox="0 0 24 24" ${P} stroke-width="1.9"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>`,
-  lock: `<svg viewBox="0 0 24 24" ${P} stroke-width="1.9"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>`,
-  spark: `<svg viewBox="0 0 24 24" ${P} stroke-width="1.9"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 17l.8 2.2L22 20l-2.2.8L19 23l-.8-2.2L16 20l2.2-.8z"/></svg>`,
-  mobile: `<svg viewBox="0 0 24 24" ${P} stroke-width="1.9"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>`,
+  phone: ph("phone"),
+  bolt: ph("lightning"),
+  search: ph("magnifying-glass"),
+  person: ph("person-arms-spread"),
+  lock: ph("lock-simple"),
+  spark: ph("sparkle"),
+  mobile: ph("device-mobile"),
   menu: `<svg viewBox="0 0 24 24" ${P} stroke-width="2.2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>`,
-  wa: `<svg viewBox="0 0 24 24" ${P} stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>`,
-  restaurant: `<svg viewBox="0 0 24 24" ${P} stroke-width="1.8"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M17 3c-2 0-3 2-3 6h3v12"/></svg>`,
-  dentist: `<svg viewBox="0 0 24 24" ${P} stroke-width="1.8"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7 .4 2 .8 6.5 2.5 6.5s1.5-5 3-5 1.3 5 3 5 2.1-4.5 2.5-6.5c.5-2.5 2-4 2-7C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg>`,
-  salon: `<svg viewBox="0 0 24 24" ${P} stroke-width="1.8"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.1 15.9M14.5 14.5L20 20M8.1 8.1L12 12"/></svg>`,
-  contractor: `<svg viewBox="0 0 24 24" ${P} stroke-width="1.8"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>`,
-  auto: `<svg viewBox="0 0 24 24" ${P} stroke-width="1.8"><path d="M3 17v-4l2-5h14l2 5v4z"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/></svg>`,
-  general: `<svg viewBox="0 0 24 24" ${P} stroke-width="1.8"><path d="M3 10l2-6h14l2 6"/><path d="M4 10v10h16V10"/><path d="M9 20v-6h6v6"/></svg>`
+  wa: ph("whatsapp-logo", "bold"),
+  restaurant: ph("fork-knife"),
+  dentist: ph("tooth"),
+  salon: ph("scissors"),
+  contractor: ph("hard-hat"),
+  auto: ph("car"),
+  general: ph("storefront")
 };
 
 export const BRAND_MARK = `<svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#111114"/><path d="M5 17h5l3-7 4 13 3-8 2 2h5" fill="none" stroke="#C8F169" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
@@ -156,13 +161,13 @@ export function cta({ title = "Got issues? <em>Fixed from $50.</em>", text = "I 
 <div class="wrap">
 <div class="cta card-dark reveal">
 <div class="cta-text">
-<div class="person"><span class="avatar" aria-hidden="true">SA</span><span><b>Shoaib Ahmad</b><br><span class="muted">Web developer behind PagePulsar</span></span></div>
+<div class="person"><img class="avatar" src="/assets/img/shoaib-avatar.webp" width="52" height="52" alt="" loading="lazy" decoding="async"><span><b>Shoaib Ahmad</b><br><span class="muted">Web developer behind PagePulsar</span></span></div>
 <h2 id="cta-title">${title}</h2>
 <p>${text}</p>
 <a class="btn btn-lime" href="https://wa.me/${SITE.whatsapp}" data-wa="Hi Shoaib, I found PagePulsar and I'd like help with my website." data-pos="cta">${ICONS.wa}Chat on WhatsApp</a>
 </div>
 <div class="chat" role="img" aria-label="Example WhatsApp conversation about fixing a website">
-<div class="chat-head"><span class="avatar" style="width:34px;height:34px;font-size:12px" aria-hidden="true">SA</span><span><b>Shoaib</b><br><small>usually replies within a day</small></span></div>
+<div class="chat-head"><img class="avatar" src="/assets/img/shoaib-avatar.webp" width="34" height="34" style="width:34px;height:34px" alt="" loading="lazy" decoding="async"><span><b>Shoaib</b><br><small>usually replies within a day</small></span></div>
 <div class="bubble bubble-me">Hi Shoaib, I checked glowspa.com. Score: 74/100 (3 issues). Can you help fix it?</div>
 <div class="bubble bubble-them">Sure! I'll look at your report and tell you exactly what it takes and what it costs.</div>
 </div>
@@ -208,7 +213,7 @@ export function crumbs(items) {
 export function typesGrid() {
   const biz = LANDINGS.filter((l) => !l.feature);
   const blurbs = { restaurant: "Menu, ordering, hours", dentist: "Booking, insurance", salon: "Book now, prices", contractor: "Service area, estimates", auto: "Services, appointments" };
-  return `<div class="types">${biz.map((l) => `<a class="type type-${l.color}" href="/${l.slug}/">${ICONS[l.type]}<b>${esc(l.nav)}</b><span>${blurbs[l.type]}</span></a>`).join("")}</div>`;
+  return `<div class="types">${biz.map((l) => `<a class="type type-${l.color}" href="/${l.slug}/"><span class="type-ico">${ICONS[l.type]}</span><b>${esc(l.nav)}</b><span>${blurbs[l.type]}</span></a>`).join("")}</div>`;
 }
 
 export function stepsRow() {
