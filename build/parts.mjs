@@ -41,7 +41,7 @@ export const ICONS = {
 
 export const BRAND_MARK = `<svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#111114"/><path d="M5 17h5l3-7 4 13 3-8 2 2h5" fill="none" stroke="#C8F169" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
-export function head({ title, description, path, noindex = false, schema = [], ogImage = "/assets/img/og-default.png", css, preloadFont }) {
+export function head({ title, description, path, noindex = false, schema = [], ogImage = "/assets/img/og-default.png", ogType = "website", extraHead = "", css, preloadFont }) {
   const url = SITE.url + path;
   const ld = schema.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join("");
   return `<head>
@@ -52,7 +52,7 @@ export function head({ title, description, path, noindex = false, schema = [], o
 <link rel="canonical" href="${url}">
 <meta name="robots" content="${noindex ? "noindex, follow" : "index, follow, max-image-preview:large"}">
 <meta name="theme-color" content="#F2F2F5">
-<meta property="og:type" content="website">
+<meta property="og:type" content="${ogType}">
 <meta property="og:site_name" content="${SITE.name}">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
@@ -71,7 +71,7 @@ export function head({ title, description, path, noindex = false, schema = [], o
 <link rel="manifest" href="/site.webmanifest">
 ${preloadFont ? `<link rel="preload" href="/assets/fonts/outfit-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>` : ""}
 <style>${css}</style>
-${ld}
+${extraHead}${ld}
 </head>`;
 }
 
@@ -80,6 +80,7 @@ export function header(path) {
     ["/#features", "Features"],
     ["/#types", "Businesses"],
     ["/how-scoring-works/", "How it works"],
+    ["/blog/", "Blog"],
     ["/about/", "About"],
     ["/contact/", "Contact"]
   ];
@@ -89,7 +90,7 @@ export function header(path) {
 <nav class="nav" aria-label="Main">
 <a class="brand" href="/" aria-label="PagePulsar home">${BRAND_MARK}<span>PagePulsar</span></a>
 <ul class="nav-links" id="nav-links">
-${links.map(([h, t]) => `<li><a href="${h}"${h === path ? ' aria-current="page"' : ""}>${t}</a></li>`).join("")}
+${links.map(([h, t]) => `<li><a href="${h}"${h === path || (h === "/blog/" && path.startsWith("/blog/")) ? ' aria-current="page"' : ""}>${t}</a></li>`).join("")}
 </ul>
 <div class="nav-cta">
 <a class="btn btn-dark" href="/#check">Check my site</a>
@@ -113,7 +114,7 @@ export function footer() {
 </div>
 <nav aria-label="Business checkers"><b>For your business</b>${biz.map((l) => `<a href="/${l.slug}/">${esc(l.nav)}</a>`).join("")}</nav>
 <nav aria-label="Free tools"><b>Free tools</b><a href="/">Website checker</a>${feat.map((l) => `<a href="/${l.slug}/">${esc(l.footer)}</a>`).join("")}</nav>
-<nav aria-label="Company"><b>Company</b><a href="/about/">About</a><a href="/how-scoring-works/">How scoring works</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+<nav aria-label="Company"><b>Company</b><a href="/about/">About</a><a href="/blog/">Blog</a><a href="/how-scoring-works/">How scoring works</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
 <div class="foot-base"><span>© <span data-year>2026</span> PagePulsar</span><a href="mailto:${SITE.email}">${SITE.email}</a></div>
 </div>
 </div>

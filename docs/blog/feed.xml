@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>PagePulsar Blog</title>
+<link>https://pagepulsar.online/blog/</link>
+<atom:link href="https://pagepulsar.online/blog/feed.xml" rel="self" type="application/rss+xml"/>
+<description>Website advice for local businesses.</description>
+<language>en</language>
+<item><title>Why Isn&apos;t My Business Showing Up on Google? 9 Reasons and Fixes</title><link>https://pagepulsar.online/blog/business-not-showing-up-on-google/</link><guid>https://pagepulsar.online/blog/business-not-showing-up-on-google/</guid><pubDate>Sat, 07 Nov 2026 09:00:00 GMT</pubDate><description>Can&apos;t find your business on Google or Google Maps? Here&apos;s how to tell what&apos;s missing, the 9 most common reasons, and how to fix each one.</description></item>
+</channel>
+</rss>

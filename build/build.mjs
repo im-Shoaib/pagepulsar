@@ -8,6 +8,7 @@ import { minify } from "html-minifier-terser";
 import { LANDINGS, HOME_FAQS } from "./content.mjs";
 import { SITE, esc, ICONS, bizPhoto, BIZ_PHOTOS, head, header, footer, scanForm, ticks, phoneMock, cta, faqSection, faqSchema, breadcrumbSchema, crumbs, typesGrid, stepsRow, webAppSchema } from "./parts.mjs";
 import { PAGES } from "./pages.mjs";
+import { buildBlog } from "./blog.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SRC = path.join(ROOT, "src");
@@ -35,10 +36,10 @@ fs.cpSync(path.join(SRC, "assets/img"), path.join(OUT, "assets/img"), { recursiv
 
 // ---------- Page shell ----------
 const sitemap = [];
-async function page(p, { title, description, body, schema = [], noindex = false, scripts = [], bodyClass = "", priority = "0.7" }) {
+async function page(p, { title, description, body, schema = [], noindex = false, scripts = [], bodyClass = "", priority = "0.7", ogImage, ogType, extraHead, lastmod }) {
   const html = `<!doctype html>
 <html lang="en">
-${head({ title, description, path: p, noindex, schema, css, preloadFont: true })}
+${head({ title, description, path: p, noindex, schema, css, preloadFont: true, ogImage, ogType, extraHead })}
 <body${bodyClass ? ` class="${bodyClass}"` : ""}>
 ${header(p)}
 ${body}
@@ -52,7 +53,7 @@ ${scripts.map((s) => `<script src="${s}" defer></script>`).join("")}
   const file = p === "/404.html" ? path.join(OUT, "404.html") : path.join(OUT, p, "index.html");
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, min);
-  if (!noindex) sitemap.push({ loc: SITE.url + p, priority });
+  if (!noindex) sitemap.push({ loc: SITE.url + p, priority, lastmod });
 }
 
 // ---------- Home ----------
@@ -242,10 +243,13 @@ for (const pg of PAGES) {
   await page(pg.path, { ...pg, body: pg.body({ esc, ICONS, SITE, crumbs, scanForm, cta, ticks }), schema: pg.schema ? pg.schema({ SITE, breadcrumbSchema }) : [] });
 }
 
+// ---------- Blog ----------
+await buildBlog({ page, OUT, parts: { SITE, esc, ICONS, crumbs, scanForm, cta, breadcrumbSchema } });
+
 // ---------- SEO files ----------
 fs.writeFileSync(path.join(OUT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${sitemap.map((s) => `  <url><loc>${s.loc}</loc><lastmod>${TODAY}</lastmod><priority>${s.priority}</priority></url>`).join("\n")}
+${sitemap.map((s) => `  <url><loc>${s.loc}</loc><lastmod>${s.lastmod || TODAY}</lastmod><priority>${s.priority}</priority></url>`).join("\n")}
 </urlset>
 `);
 fs.writeFileSync(path.join(OUT, "robots.txt"), `User-agent: *

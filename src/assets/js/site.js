@@ -122,4 +122,19 @@
       banner.querySelector("[data-consent=no]").addEventListener("click", function () { store(KEY, "no"); banner.hidden = true; });
     }
   }
+  // Blog: highlight the current section in the table of contents.
+  var tocLinks = document.querySelectorAll(".toc-side a");
+  if (tocLinks.length && "IntersectionObserver" in window) {
+    var map = {};
+    tocLinks.forEach(function (a) { map[a.getAttribute("href").slice(1)] = a; });
+    var tio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting && map[e.target.id]) {
+          tocLinks.forEach(function (a) { a.classList.remove("is-active"); });
+          map[e.target.id].classList.add("is-active");
+        }
+      });
+    }, { rootMargin: "0px 0px -70% 0px" });
+    Object.keys(map).forEach(function (id) { var h = document.getElementById(id); if (h) tio.observe(h); });
+  }
 })();
