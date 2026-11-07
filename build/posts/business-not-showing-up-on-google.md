@@ -1,6 +1,6 @@
 You search for your own business on Google and it isn't there. Or a competitor two streets away shows up and you don't. Or your website appears, but you're nowhere on the map.
 
-I see this a lot with small business websites. The cause is nearly always one of a few simple things, and most of them take minutes to check. Some take a few days to fix, because Google has to catch up after you change something. Here's how to work out which problem you have, and what to do about each one.
+I run into this a lot when I look at small business websites. The cause is nearly always one of a few simple things, and most of them take minutes to check. Some take a few days to fix, because Google has to catch up after you change something. Here's how to work out which problem you have, and what to do about each one.
 
 ## First, work out which part of Google you're missing from
 
@@ -81,7 +81,7 @@ You can give it a nudge. Add your site to [Google Search Console](https://search
 
 ### 8. Your site is telling Google to stay away
 
-This happens more often than you'd expect, and it usually comes down to one setting.
+This one catches a lot of people out, and it's usually a single setting.
 
 - **WordPress:** under Settings → Reading there's a box called "Discourage search engines from indexing this site". Developers often tick it while they build the site and forget to untick it at launch.
 - **A `noindex` tag** in the page code, which tells Google not to list that page.
@@ -104,7 +104,7 @@ Check these four things:
 
 ## Things that don't work
 
-A few shortcuts people try that cost time or money and get nothing back:
+Some shortcuts people try. They cost time or money and get you nothing:
 
 - **Paying Google to rank higher on the map.** There's no such option.
 - **Buying reviews.** It breaks Google's rules. It's also illegal now in the US, under an [FTC rule](https://www.ftc.gov/legal-library/browse/rules/rulemaking-use-consumer-reviews-testimonials) from 2024, and in the UK [since April 2025](https://www.gov.uk/government/news/fake-reviews-and-sneaky-hidden-fees-banned-once-and-for-all).
@@ -115,13 +115,13 @@ A few shortcuts people try that cost time or money and get nothing back:
 
 If the problem was a setting, like the WordPress box or an unfinished verification, you'll usually see a change within a few days to a couple of weeks of fixing it.
 
-Moving up for searches like "plumber near me" is slower. Think months, not days. It depends on your reviews, your website and how established you are next to the other businesses in your area.
+Moving up for searches like "plumber near me" takes longer. Think months, not days. It depends on your reviews, your website and how established you are next to the other businesses in your area.
 
 ## Quick answers to common questions
 
 ### Why can I see my business on my phone but not on my laptop?
 
-Google tailors results to where you are and what you've searched before. Your phone may be using your exact location, while your laptop uses a rougher guess. That's why the incognito test above is worth doing. It gives you a cleaner idea of what a new customer sees.
+Google adjusts results based on where you are and what you've searched before. Your phone may be using your exact location, while your laptop uses a rougher guess. That's why the incognito test above is worth doing. It gives you a cleaner idea of what a new customer sees.
 
 ### My business disappeared from Google Maps overnight. Why?
 
