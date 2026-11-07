@@ -90,10 +90,10 @@ ${crumbs([["Home", "/"], ["How scoring works", "/how-scoring-works/"]])}
   {
     path: "/about/",
     title: "About PagePulsar — Free Website Checkups for Local Businesses",
-    description: "PagePulsar is a free website checker for local businesses, built by independent web developer Shoaib Ahmad. Honest reports, plain English, fixes from $50.",
+    description: "PagePulsar is a free website checker for local businesses, created by full-stack web developer Shoaib Ahmad. Honest reports, clear fixes, expert help from $50.",
     priority: "0.5",
     schema: ({ SITE, breadcrumbSchema }) => [
-      { "@context": "https://schema.org", "@type": "AboutPage", name: "About PagePulsar", url: SITE.url + "/about/", mainEntity: { "@type": "Person", name: SITE.owner, jobTitle: "Web developer", image: SITE.url + "/assets/img/shoaib-ahmad.webp", url: SITE.url + "/about/", sameAs: [SITE.fiverr] } },
+      { "@context": "https://schema.org", "@type": "AboutPage", name: "About PagePulsar", url: SITE.url + "/about/", mainEntity: { "@type": "Person", name: SITE.owner, jobTitle: "Full-stack web developer", image: SITE.url + "/assets/img/shoaib-ahmad.webp", url: SITE.url + "/about/", sameAs: [SITE.fiverr] } },
       breadcrumbSchema([["Home", "/"], ["About", "/about/"]])
     ],
     body: ({ crumbs, SITE, ICONS }) => `<main id="main">
@@ -109,14 +109,16 @@ ${crumbs([["Home", "/"], ["About", "/about/"]])}
 <p>Most website reports are written for marketers. Local business owners get a long PDF full of terms like "canonical tags" and "render-blocking resources", and no idea what to do first.</p>
 <p>PagePulsar takes a different view. A local business website has a few simple jobs: show up on Google, look trustworthy, load fast on a phone, and make it easy to call, book or visit. So that's what we check, in plain English, with the most important fixes first.</p>
 <h2>Who's behind it</h2>
-<p>PagePulsar is built and run by ${SITE.owner}, an independent web developer who has spent about three years building and fixing websites for clients around the world through <a href="${SITE.fiverr}" rel="noopener">Fiverr</a>. The checker is free. If you'd like help fixing what it finds, you can message Shoaib directly — fixes start from $50.</p>
+<p>PagePulsar is built and run by ${SITE.owner}, a full-stack web developer with more than 4.5 years of experience designing, building and optimizing websites for businesses worldwide. His work focuses on fast, search-friendly sites that turn visitors into customers.</p>
+<p>The checker is free to use. If you want the issues it finds fixed properly, you can work with Shoaib directly. Fixes start from $50, and every job comes with a clear quote before any work begins.</p>
 <h2>Our promises</h2>
 <ul><li>The checkup is free, with no signup.</li><li>We only read your public homepage — never logins or private data.</li><li>We say what we can't check, instead of pretending.</li><li>No pushy sales calls. You message us if you want help.</li></ul>
 </div>
 <div class="card card-dark" style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:14px;align-self:flex-start">
-<img class="portrait" src="/assets/img/shoaib-ahmad.webp" width="480" height="600" alt="Shoaib Ahmad, web developer and founder of PagePulsar" decoding="async">
+<img class="portrait" src="/assets/img/shoaib-ahmad.webp" width="480" height="600" alt="Shoaib Ahmad, full-stack web developer and founder of PagePulsar" decoding="async">
 <h2 style="font-size:28px">${SITE.owner}</h2>
-<p class="muted">Web developer · HTML, CSS, JavaScript, PHP, Laravel</p>
+<p class="muted">Full-stack web developer · Founder of PagePulsar</p>
+<p class="muted" style="font-size:15px">4.5+ years experience · HTML, CSS, JavaScript, PHP, Laravel</p>
 <a class="btn btn-lime" href="https://wa.me/${SITE.whatsapp}" data-wa="Hi Shoaib, I'd like help with my website." data-pos="about">${ICONS.wa}Chat on WhatsApp</a>
 <a class="btn btn-white" href="mailto:${SITE.email}">Email ${SITE.email}</a>
 </div>
@@ -148,7 +150,7 @@ ${crumbs([["Home", "/"], ["Contact", "/contact/"]])}
 <div class="card" style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:12px">
 <h2 style="font-size:30px">What to send</h2>
 <ul class="ticks" style="flex-direction:column;gap:10px;font-size:16px;color:var(--ink)"><li>${ICONS.check}Your website address</li><li>${ICONS.check}Your PagePulsar report link, if you ran one</li><li>${ICONS.check}What you'd like to improve most</li></ul>
-<p class="muted" style="font-size:15px">Shoaib works with clients worldwide and replies in English.</p>
+<p class="muted" style="font-size:15px">Shoaib works with businesses worldwide.</p>
 </div>
 </section>
 </div>

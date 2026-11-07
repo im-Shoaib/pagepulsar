@@ -43,7 +43,7 @@ function render(md) {
 export async function buildBlog({ page, OUT, parts }) {
   const { SITE, esc, ICONS, crumbs, scanForm, cta, breadcrumbSchema } = parts;
   const posts = [...POSTS].sort((a, b) => b.date.localeCompare(a.date));
-  const author = { "@type": "Person", name: SITE.owner, url: SITE.url + "/about/", image: SITE.url + "/assets/img/shoaib-ahmad.webp", jobTitle: "Web developer" };
+  const author = { "@type": "Person", name: SITE.owner, url: SITE.url + "/about/", image: SITE.url + "/assets/img/shoaib-ahmad.webp", jobTitle: "Full-stack web developer" };
   const publisher = { "@type": "Organization", name: SITE.name, url: SITE.url, logo: { "@type": "ImageObject", url: SITE.url + "/assets/img/icon-512.png" } };
   const feedLink = `<link rel="alternate" type="application/rss+xml" title="PagePulsar Blog" href="/blog/feed.xml">`;
 
@@ -90,7 +90,7 @@ ${body}
 <div class="author-box">
 <img src="/assets/img/shoaib-avatar.webp" width="64" height="64" alt="" loading="lazy" decoding="async">
 <div><p class="author-name">Written by <a href="/about/">${esc(SITE.owner)}</a></p>
-<p>Shoaib is a web developer who has spent about three years building and fixing websites for small businesses. He built PagePulsar so owners can see what's wrong with their site in plain English.</p></div>
+<p>Shoaib is a full-stack web developer with more than 4.5 years of experience building and optimizing websites for businesses worldwide. He created PagePulsar to give business owners a clear, honest picture of how their website performs and what to improve first.</p></div>
 </div>
 ${related ? `<nav class="post-related" aria-label="Related tools"><p>Related free checkers</p><div class="chips">${related}</div></nav>` : ""}
 </div>

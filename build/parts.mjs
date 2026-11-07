@@ -162,7 +162,7 @@ export function cta({ title = "Got issues? <em>Fixed from $50.</em>", text = "I 
 <div class="wrap">
 <div class="cta card-dark reveal">
 <div class="cta-text">
-<div class="person"><img class="avatar" src="/assets/img/shoaib-avatar.webp" width="52" height="52" alt="" loading="lazy" decoding="async"><span><b>Shoaib Ahmad</b><br><span class="muted">Web developer behind PagePulsar</span></span></div>
+<div class="person"><img class="avatar" src="/assets/img/shoaib-avatar.webp" width="52" height="52" alt="" loading="lazy" decoding="async"><span><b>Shoaib Ahmad</b><br><span class="muted">Full-stack developer · Founder of PagePulsar</span></span></div>
 <h2 id="cta-title">${title}</h2>
 <p>${text}</p>
 <a class="btn btn-lime" href="https://wa.me/${SITE.whatsapp}" data-wa="Hi Shoaib, I found PagePulsar and I'd like help with my website." data-pos="cta">${ICONS.wa}Chat on WhatsApp</a>
