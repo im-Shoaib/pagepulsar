@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 import * as esbuild from "esbuild";
 import { minify } from "html-minifier-terser";
 import { LANDINGS, HOME_FAQS } from "./content.mjs";
-import { SITE, esc, ICONS, head, header, footer, scanForm, ticks, phoneMock, cta, faqSection, faqSchema, breadcrumbSchema, crumbs, typesGrid, stepsRow, webAppSchema } from "./parts.mjs";
+import { SITE, esc, ICONS, bizPhoto, BIZ_PHOTOS, head, header, footer, scanForm, ticks, phoneMock, cta, faqSection, faqSchema, breadcrumbSchema, crumbs, typesGrid, stepsRow, webAppSchema } from "./parts.mjs";
 import { PAGES } from "./pages.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -179,7 +179,8 @@ ${ticks()}
 </div>
 </div>
 <div class="card reveal reveal-d2" style="flex:2 1 360px;min-width:0;background:${colorVar};box-shadow:none;display:flex;flex-direction:column;gap:18px">
-<span class="icon-tile">${ICONS[l.focus === "mobile" ? "mobile" : l.focus === "accessibility" ? "person" : l.focus === "ai" ? "spark" : l.type]}</span>
+${l.feature ? "" : bizPhoto(l.type, { cls: "side-photo", sizes: "(max-width: 900px) 92vw, 460px", lazy: false, alt: BIZ_PHOTOS[l.type] })}
+<span class="icon-tile${l.feature ? "" : " icon-tile-over"}">${ICONS[l.focus === "mobile" ? "mobile" : l.focus === "accessibility" ? "person" : l.focus === "ai" ? "spark" : l.type]}</span>
 <h2 style="font-size:28px">What we check${l.feature ? "" : ` for ${esc(l.nav.toLowerCase())}`}</h2>
 <ul class="ticks" style="flex-direction:column;gap:12px;font-size:17px;color:var(--ink)">${l.quick.map((q) => `<li>${ICONS.check}${esc(q)}</li>`).join("")}</ul>
 <p style="font-size:15px">Plus every standard check: speed, mobile, Google basics, accessibility and security.</p>

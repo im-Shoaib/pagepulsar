@@ -210,10 +210,22 @@ export function crumbs(items) {
   return `<nav aria-label="Breadcrumb"><ol class="crumbs">${items.map(([n, p], i) => (i === items.length - 1 ? `<li aria-current="page">${esc(n)}</li>` : `<li><a href="${p}">${esc(n)}</a></li>`)).join("")}</ol></nav>`;
 }
 
+export const BIZ_PHOTOS = {
+  restaurant: "Restaurant dining room with a plate of pasta on a wooden table",
+  dentist: "Bright, modern dental treatment room",
+  salon: "Hair salon styling station with a round mirror",
+  contractor: "Contractor's workbench with plans, a drill and a hard hat",
+  auto: "Mechanic tightening a wheel on a car in a clean garage"
+};
+
+export function bizPhoto(type, { cls, sizes, lazy = true, alt = "" }) {
+  return `<img class="${cls}" src="/assets/img/biz-${type}-480.webp" srcset="/assets/img/biz-${type}-480.webp 480w, /assets/img/biz-${type}-800.webp 800w" sizes="${sizes}" width="480" height="360" alt="${esc(alt)}"${lazy ? ' loading="lazy"' : ""} decoding="async">`;
+}
+
 export function typesGrid() {
   const biz = LANDINGS.filter((l) => !l.feature);
   const blurbs = { restaurant: "Menu, ordering, hours", dentist: "Booking, insurance", salon: "Book now, prices", contractor: "Service area, estimates", auto: "Services, appointments" };
-  return `<div class="types">${biz.map((l) => `<a class="type type-${l.color}" href="/${l.slug}/"><span class="type-ico">${ICONS[l.type]}</span><b>${esc(l.nav)}</b><span>${blurbs[l.type]}</span></a>`).join("")}</div>`;
+  return `<div class="types">${biz.map((l) => `<a class="type type-${l.color}" href="/${l.slug}/"><span class="type-photo">${bizPhoto(l.type, { cls: "", sizes: "(max-width: 560px) 92vw, (max-width: 1000px) 45vw, 240px" })}</span><span class="type-body"><span class="type-ico">${ICONS[l.type]}</span><b>${esc(l.nav)}</b><span class="type-sub">${blurbs[l.type]}</span></span></a>`).join("")}</div>`;
 }
 
 export function stepsRow() {
