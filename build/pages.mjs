@@ -13,7 +13,8 @@ export const PAGES = [
 <div class="wrap">
 <section id="r-progress" class="progress" aria-live="polite">
 <span class="eyebrow"><span class="dot"></span>Checking <span id="r-domain">your website</span></span>
-<h1 style="margin-top:18px">Running your checkup…</h1>
+<svg class="progress-pulse" viewBox="0 0 220 44" aria-hidden="true"><path d="M2 24h52l10-15 14 30 12-36 12 32 8-11h108"/></svg>
+<h1 style="margin-top:10px">Running your checkup…</h1>
 <p class="lead" style="margin:14px auto 0">This takes about 30 seconds. The mobile speed test is the slow part.</p>
 <ol class="progress-steps">
 <li data-step="0"><i></i>Loading your homepage</li>

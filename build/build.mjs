@@ -21,6 +21,7 @@ fs.mkdirSync(OUT, { recursive: true });
 // ---------- Assets ----------
 const cssRaw = fs.readFileSync(path.join(SRC, "assets/css/site.css"), "utf8").replace(/\.\.\/fonts\//g, "/assets/fonts/");
 const css = (await esbuild.transform(cssRaw, { loader: "css", minify: true })).code.trim();
+const reportCss = (await esbuild.transform(fs.readFileSync(path.join(SRC, "assets/css/report.css"), "utf8"), { loader: "css", minify: true })).code.trim();
 
 const copy = (from, to) => { fs.mkdirSync(path.dirname(to), { recursive: true }); fs.copyFileSync(from, to); };
 copy(path.join(ROOT, "node_modules/@fontsource-variable/outfit/files/outfit-latin-wght-normal.woff2"), path.join(OUT, "assets/fonts/outfit-latin-wght-normal.woff2"));
@@ -240,7 +241,7 @@ ${faqSection(l.faqs)}
 
 // ---------- Other pages ----------
 for (const pg of PAGES) {
-  await page(pg.path, { ...pg, body: pg.body({ esc, ICONS, SITE, crumbs, scanForm, cta, ticks }), schema: pg.schema ? pg.schema({ SITE, breadcrumbSchema }) : [] });
+  await page(pg.path, { ...pg, extraHead: pg.path === "/report/" ? `<style>${reportCss}</style>` : pg.extraHead, body: pg.body({ esc, ICONS, SITE, crumbs, scanForm, cta, ticks }), schema: pg.schema ? pg.schema({ SITE, breadcrumbSchema }) : [] });
 }
 
 // ---------- Blog ----------

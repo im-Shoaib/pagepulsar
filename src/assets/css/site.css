@@ -323,53 +323,7 @@ ul, ol { margin: 0; padding: 0; }
 .foot nav a:hover { color: var(--ink); }
 .foot-base { flex: 1 1 100%; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 13px; color: var(--ink-2); border-top: 1px solid var(--line); padding-top: 16px; }
 
-/* ---------- Report ---------- */
-.progress { max-width: 640px; margin: 24px auto 0; padding-bottom: 56px; text-align: center; }
-.progress h1 { font-size: clamp(30px, 4vw, 44px); }
-.progress-steps { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 28px; text-align: left; }
-.progress-steps li { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-radius: 18px; background: #fff; color: var(--ink-3); transition: color 0.3s, box-shadow 0.3s; }
-.progress-steps li.is-active { color: var(--ink); box-shadow: var(--shadow); }
-.progress-steps li.is-done { color: var(--ink); }
-.progress-steps i { width: 22px; height: 22px; flex: 0 0 auto; border-radius: 50%; border: 2.5px solid var(--line); }
-.progress-steps li.is-active i { border-color: var(--ink); border-right-color: transparent; animation: spin 0.8s linear infinite; }
-.progress-steps li.is-done i { border: 0; background: var(--lime) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23111114' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center no-repeat; }
-@keyframes spin { to { transform: rotate(360deg); } }
 
-.report-top { display: flex; flex-wrap: wrap; gap: 16px; }
-.score-card { flex: 1 1 320px; min-width: 0; border-radius: var(--radius-xl); padding: 32px; display: flex; flex-direction: column; gap: 14px; }
-.score-card .big { font-size: clamp(96px, 12vw, 140px); line-height: 0.82; font-weight: 800; letter-spacing: -0.06em; }
-.score-card .big small { font-size: 26px; letter-spacing: 0; font-weight: 600; }
-.grade-a { background: #c9f2d8; } .grade-b { background: var(--lime); } .grade-c { background: var(--sun); } .grade-d { background: var(--peach); } .grade-f { background: #ffc9c9; }
-.site-meta { flex: 2 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
-.site-meta h1 { font-size: clamp(28px, 3.4vw, 42px); word-break: break-word; }
-.shot { width: 100%; max-width: 220px; border-radius: 18px; border: 6px solid var(--ink); }
-.cats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
-.cat { text-decoration: none; padding: 18px; border-radius: 20px; background: #fff; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 6px; }
-.cat small { font-size: 13px; color: var(--ink-2); }
-.cat b { font-size: 32px; line-height: 1; }
-.cat .bar-track { height: 8px; }
-.issues { display: flex; flex-direction: column; gap: 10px; }
-.issue-card { background: #fff; border-radius: 22px; padding: 20px 22px; display: flex; gap: 16px; align-items: flex-start; }
-.issue-card h3 { font-size: 18px; letter-spacing: -0.01em; line-height: 1.25; }
-.issue-card p { font-size: 15px; color: var(--ink-2); margin-top: 6px; }
-.issue-card .fix { color: var(--ink); }
-.sev { flex: 0 0 auto; min-width: 78px; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 5px 9px; border-radius: 8px; margin-top: 2px; }
-.sev-critical { background: #ffc9c9; color: #8a1414; }
-.sev-high { background: var(--peach); color: #7a3010; }
-.sev-medium { background: var(--sun); color: var(--sun-ink); }
-.sev-low { background: var(--sky); color: var(--sky-ink); }
-.sev-info, .sev-unknown { background: var(--bg); color: var(--ink-2); }
-.passed { background: #fff; border-radius: 22px; padding: 0 22px; }
-.passed summary { cursor: pointer; padding: 20px 0; font-weight: 600; }
-.passed ul { list-style: none; padding-bottom: 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px; }
-.passed li { display: flex; gap: 8px; font-size: 15px; }
-.passed li svg { width: 18px; height: 18px; color: var(--good); flex: 0 0 auto; margin-top: 3px; }
-.notice { padding: 16px 20px; border-radius: 18px; background: var(--sun); color: var(--sun-ink); font-size: 15px; }
-.sticky-cta { display: none; }
-@media (max-width: 720px) {
-  .sticky-cta { display: flex; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 40; box-shadow: 0 14px 30px rgba(17, 17, 20, 0.3); }
-  .has-sticky { padding-bottom: 84px; }
-}
 
 /* ---------- Blog ---------- */
 .post-head { padding: clamp(28px, 4vw, 48px) clamp(22px, 3.4vw, 44px); }
@@ -489,6 +443,5 @@ ul, ol { margin: 0; padding: 0; }
   .site-header, .site-footer, .cta, .sticky-cta, .consent, .no-print, .post-side, .post-cta, .toc-mobile { display: none !important; }
   .post-grid { display: block; }
   body { background: #fff; font-size: 12pt; }
-  .card, .issue-card, .cat, .passed { box-shadow: none; border: 1px solid #ddd; break-inside: avoid; }
-  .passed[open] ul, .passed ul { display: grid; }
+  .card { box-shadow: none; border: 1px solid #ddd; break-inside: avoid; }
 }
